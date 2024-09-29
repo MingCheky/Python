@@ -20,3 +20,12 @@ athletes = [('Дима', 10, 130, 35), ('Тимур', 11, 135, 39), ('Русла
 options = {1: name, 2: age, 3: height, 4: weight}
 for i in sorted(athletes, key=options[int(input())]):
     print(*i)
+
+
+--------------------------------------------------------------------------------------------------------------
+def compair(s):
+    return sum([int(i) for i in s])
+
+
+numbers = [str(j) for j in input().split()]
+print(*sorted(numbers, key=compair))
