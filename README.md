@@ -1,3 +1,6 @@
+# sorting a list of numbers in non-decreasing order of the sum of their digits
+# option 1
+
 def name(s):
     return s[0]
 
@@ -23,8 +26,19 @@ for i in sorted(athletes, key=options[int(input())]):
 
 
 --------------------------------------------------------------------------------------------------------------
+# option 2
 def compair(s):
     return sum([int(i) for i in s])
+
+
+numbers = [str(j) for j in input().split()]
+print(*sorted(numbers, key=compair))
+
+
+--------------------------------------------------------------------------------------------------------------
+# if two numbers have the same sum of digits, they should be output in non-decreasing order
+def compair(s):
+    return sum([int(i) for i in s]), s
 
 
 numbers = [str(j) for j in input().split()]
