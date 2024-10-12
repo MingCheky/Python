@@ -1,0 +1,10 @@
+# Функция  возвращаtn строку, полученную путем объединения подходящего существительного из кортежа declensions и количества amount
+
+def choose_plural(amount: int, declensions: tuple):
+    amount = str(amount)
+    if all([amount.endswith('1'), not amount.endswith('11')]):
+        return str(amount) + ' ' + declensions[0]
+    if all([any([amount.endswith('2'), amount.endswith('3'), amount.endswith('4')]), not amount.endswith('11'),
+            not amount.endswith('12'), not amount.endswith('13'), not amount.endswith('14')]):
+        return str(amount) + ' ' + declensions[1]
+    return str(amount) + ' ' + declensions[2]
