@@ -1,0 +1,9 @@
+import sys
+
+ab = [int(i.strip('\n')) for i in sys.stdin]
+arif, geo = [], []
+for i in range(len(ab) - 1):
+    arif.append(ab[i + 1] - ab[i])
+    geo.append(ab[i + 1] / ab[i])
+answer = [len(set(arif)) == 1, len(set(geo)) == 1, len(set(arif)) != 1 and len(set(arif)) != 1]
+print(['Арифметическая прогрессия', 'Геометрическая прогрессия', 'Не прогрессия'][answer.index(True)])
